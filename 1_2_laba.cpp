@@ -1,5 +1,10 @@
 #include <iostream>
-
+/**
+ * @brief Обрабатывает массив: удаляет элементы до первого отрицательного
+ * @param arr Ссылка на указатель массива (int*&)
+ * @param size Ссылка на размер массива (int&)
+ * @note Освобождает старую память через delete[] перед созданием нового массива
+ */
 void process(int*& arr, int& size)
 {
     int negativeIndex = -1;
@@ -33,7 +38,12 @@ void process(int*& arr, int& size)
     arr = newArr;
     size = newSize;
 }
-
+/**
+ * @brief Выводит массив на экран
+ * @param arr Указатель на константный массив
+ * @param size Размер массива
+ * @note Проверяет указатель на nullptr
+ */
 void printArray(const int* arr, int size)
 {
     if (arr == nullptr || size <= 0)
